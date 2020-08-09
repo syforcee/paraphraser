@@ -15,16 +15,16 @@ python -m spacy download en
 echo -e "${GREEN}Creating data directory${NC}" 
 mkdir -p data
 
-echo -e "${GREEN}Downloading required sentence embeddings${NC}"
-if [ ! -d "data/para-nmt-50m-demo" ] then 
+if [ ! -d "data/para-nmt-50m-demo" ]; then 
+    echo -e "${GREEN}Downloading required sentence embeddings${NC}"
     gdown https://drive.google.com/uc?id=1l2liCZqWX3EfYpzv9OmVatJAEISPFihW
     unzip para-nmt-50m-demo.zip
     mv para-nmt-50m-demo data
     rm para-nmt-50m-demo.zip
 fi
 
-echo -e "${GREEN}Downloading model checkpoint${NC}" 
-if [ ! -d "data/train-20180325-001253" ] then 
+if [ ! -d "data/train-20180325-001253" ]; then 
+    echo -e "${GREEN}Downloading model checkpoint${NC}" 
     gdown https://drive.google.com/uc?id=18uOQsosF4uVGvUgp6pB4BKrQZ1FktlmM
     tar -xzf train-20180325-001253.tar.gz
     mv train-20180325-001253 data
