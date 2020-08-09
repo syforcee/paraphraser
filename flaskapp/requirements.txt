@@ -1,0 +1,6 @@
+Tensorflow == 1.14.0
+spacy
+nltk==3.2.5
+flask
+gdown
+webargs
