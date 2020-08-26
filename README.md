@@ -80,7 +80,9 @@ Web server was created using Flask framework.
 
 Execute following commands from the repository root:
  > cd flaskapp
+ 
  > export FLASK_APP=app.py
+ 
  > flask run
  
  Application should start at default port 5000.
@@ -89,13 +91,17 @@ Execute following commands from the repository root:
  GET /healthcheck
  
  
+ 
  POST /paraphrase 
+ ```yaml
+
     body:
     {
         "phrase": <string to paraphrase>,
         "temperature": <float 0-1>,
         "strategy": <only "SAMPLE" supported>
     }
+    
     example:
     {
         "phrase": "alice has a ",
