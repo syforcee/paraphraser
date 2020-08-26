@@ -66,3 +66,39 @@ Training was done for 2 epochs on a Nvidia GTX 1080 and evaluted on the BLEU sco
 }
 ```
 
+## Web server
+
+### Installation
+In order to start paraphraser web server run launch.sh file from the repository root directory. 
+
+Watch if all installation steps are performed correctly. After succesfful installation, you should have all python packages (Python 3.6) installed.
+Make sure data folder was created. It should contain 2 folders with models required for paraphraser to run. 
+
+
+### Launch
+Web server was created using Flask framework.
+
+Execute following commands from the repository root:
+ > cd flaskapp
+ > export FLASK_APP=app.py
+ > flask run
+ 
+ Application should start at default port 5000.
+ 
+ ### API:
+ GET /healthcheck
+ 
+ 
+ POST /paraphrase 
+    body:
+    {
+        "phrase": <string to paraphrase>,
+        "temperature": <float 0-1>,
+        "strategy": <only "SAMPLE" supported>
+    }
+    example:
+    {
+        "phrase": "alice has a ",
+        "temperature": 0.5,
+        "strategy": "SAMPLE"
+    }
